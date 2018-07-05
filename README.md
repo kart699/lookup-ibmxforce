@@ -12,39 +12,24 @@ IBM X-Force Exchange is supported by human- and machine-generated intelligence l
 Returns live and passive DNS records.
 - input : An IP address or domain or URL to be queried
 ```
-_fetch $Url from threatsample limit 1
->>_lookup virustotal get_url_report $Url
+_fetch $SrcIP from threatsample limit 1
+>>_lookup ibmxforce get_dns_record $SrcIP
 ```
 ###### Sample Output 
-![dns_record](https://drive.google.com/file/d/1iTaGkasqTR2gDUZjuslX7i4t4EBBmqFf/view?usp=sharing)
-
+![get_dns_record](https://user-images.githubusercontent.com/37173181/42326369-933920fe-8086-11e8-8d6a-80b68d0b1115.jpg)
 
 The Lookup call returns output in the following structure for available data
 
   | Fields        | Description  |
 |:------------- |:-------------|
-| $VTURL      | URL being queried |
-| $VTPermalink      | Permalink of report stored in VirusTotal |
-| $VTPositive | List of scans returning positive detection |
-| $VTNegative | List of scans returning negative detection |
-| $VTPositives | Count of positive detection |
-| $VTResponseCode | If the queried url is present in VirusTotal database it returns 1 ,if absent returns 0 and if the requested item is still queued for analysis it will be -2 |
-| $VTTotal | Count of positive and negative detections |
-| $VTSystemTstamp | Scan Date |
-
- If the queried url is not present in VirusTotal Data base the lookup call returns the following
-
- | Fields        | Description  |
-|:------------- |:-------------|
-| $VTURL      | URL being queried |
-| $VTPermalink      | Permalink of report stored in VirusTotal |
-| $VTResponseCode | If the queried url is absent in VirusTotal database it returns 0  and if the requested item is still queued for analysis it will be -2 |
-| $VTTotal | Count of positive and negative detections |
-| $VTSystemTstamp | Scan Date |
-| $VTMessage | Verbose message of url being successfully queued up for scan |
-| $VTScanID | Provides a scan id which can be later used for quering the report |
-
-
+| $IBMError    | Error message for failure of the |
+| $IBMMX      | Mail exchange servers for the queried |
+| $IBMTXT | List of scans returning positive detection |
+| $IBMTotalRecords | List of scans returning negative detection |
+| $IBMIPv4Records | Count of positive detection |
+| $IBMIPv6Records | If the queried url is present in VirusTotal database it returns 1 ,if absent returns 0 and if the requested item is still queued for analysis it will be -2 |
+| $IBMRDNS | Count of positive and negative detections |
+| $IBMUrlRecordTypeA |  |
 #####  Retrieve Domain reports
 The domain for which you want to retrieve the report
 - input : a domain name.
