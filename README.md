@@ -1,8 +1,9 @@
-## VirusTotal   
-  https://www.virustotal.com/#/home/url
+## IBM X-Force Exchange   
+  https://exchange.xforce.ibmcloud.com/
 
 ### Overview
-VirusTotal inspects items with over 70 antivirus scanners and URL/domain blacklisting services, in addition to a myriad of tools to extract signals from the studied content
+IBM X-Force Exchange is a cloud-based threat intelligence sharing platform enabling users to rapidly research the latest security threats, aggregate actionable intelligence and collaborate with peers.  
+IBM X-Force Exchange is supported by human- and machine-generated intelligence leveraging the scale of IBM X-Force.
 ##### Real-time updates
 Malware signatures are updated frequently by VirusTotal as they are distributed by antivirus companies, this ensures that our service uses the latest signature sets.
 Website scanning is done in some cases by querying vendor databases that have been shared with VirusTotal and stored on our premises and
@@ -139,28 +140,29 @@ The Lookup call returns output in the following structure for available data
 
 
 
-### Using the VirusTotal API and DNIF  
+### Using the IBM X-Force Exchange API and DNIF  
 The VirusTotal API is found on github at 
 
-  https://github.com/dnif/lookup-virustotal
+  https://github.com/dnif/lookup-ibmxforce
 
-#### Getting started with VirusTotal API and DNIF
+#### Getting started with IBM X-Force Exchange API and DNIF
 
 1. #####    Login to your Data Store, Correlator, and A10 containers.  
    [ACCESS DNIF CONTAINER VIA SSH](https://dnif.it/docs/guides/tutorials/access-dnif-container-via-ssh.html)
-2. #####    Move to the ‘/dnif/<Deployment-key/lookup_plugins’ folder path.
+2. #####    Move to the `/dnif/<Deployment-key>/lookup_plugins` folder path.
 ```
 $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 ```
 3. #####   Clone using the following command  
 ```  
-git clone https://github.com/dnif/lookup-virustotal.git virustotal
+git clone https://github.com/dnif/lookup-ibmxforce.git ibmxforce
 ```
-4. #####   Move to the ‘/dnif/<Deployment-key/lookup_plugins/virustotal/’ folder path and open dnifconfig.yml configuration file     
+4. #####   Move to the `/dnif/<Deployment-key>/lookup_plugins/ibmxforce/` folder path and open dnifconfig.yml configuration file     
     
-   Replace the tag: <Add_your_api_key_here> with your VirusTotal api key
+   Replace the tag: <Add_your_api_key_here> with your IBM X-Force Exchange api key and password
 ```
 lookup_plugin:
-  VT_API_KEY: <Add_your_api_key_here>
+  IBMXFORCE_API_KEY: <Add_your_api_key_here>
+  IBMXFORCE_API_PASS: <Add_your_api_pass_here>
 
 ```
