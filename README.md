@@ -4,27 +4,19 @@
 ### Overview
 IBM X-Force Exchange is a cloud-based threat intelligence sharing platform enabling users to rapidly research the latest security threats, aggregate actionable intelligence and collaborate with peers.  
 IBM X-Force Exchange is supported by human- and machine-generated intelligence leveraging the scale of IBM X-Force.
-##### Real-time updates
-Malware signatures are updated frequently by VirusTotal as they are distributed by antivirus companies, this ensures that our service uses the latest signature sets.
-Website scanning is done in some cases by querying vendor databases that have been shared with VirusTotal and stored on our premises and
-in other cases by API queries to an antivirus company's solution. As such, as soon as a given contributor blacklists a URL it is immediately reflected in user-facing verdicts.
-##### Detailed results
-VirusTotal not only tells you whether a given antivirus solution detected a submitted file as malicious, but also displays each engine's detection label (e.g., I-Worm.Allaple.gen).
-The same is true for URL scanners, most of which will discriminate between malware sites, phishing sites, suspicious sites, etc. 
-Some engines will provide additional information, stating explicitly whether a given URL belongs to a particular botnet, which brand is targeted by a given phishing site, and so on.
- 
-##### Lookups integrated with VirusTotal
 
-##### Retrieve URL scan reports  
-The URL for which you want to retrieve the most recent report
-- input : A URL for which VirusTotal will retrieve the most recent report on the given URL.
-          You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific                 report.
+ 
+##### Lookups integrated with IBM X-Force Exchange
+
+##### Retrieve DNS records 
+Returns live and passive DNS records.
+- input : An IP address or domain or URL to be queried
 ```
 _fetch $Url from threatsample limit 1
 >>_lookup virustotal get_url_report $Url
 ```
 ###### Sample Output 
-![url_report](https://user-images.githubusercontent.com/37173181/38144498-8e1ade20-3462-11e8-8e80-a56457a149dc.jpg)
+![dns_record](https://drive.google.com/file/d/1iTaGkasqTR2gDUZjuslX7i4t4EBBmqFf/view?usp=sharing)
 
 
 The Lookup call returns output in the following structure for available data
