@@ -9,7 +9,7 @@ IBM X-Force Exchange is supported by human- and machine-generated intelligence l
 ##### Lookups integrated with IBM X-Force Exchange
 
 ##### Retrieve DNS records 
-Returns live and passive DNS records.
+Retrieves DNS information for domain names, URLs and IP addresses. It returns common DNS record types. The report accounts for both current (live) and historical information for the domain, including the results of passive DNS monitoring by the IBM Security sensor network.
 - input : An IP address or domain or URL to be queried
 ```
 _fetch $SrcIP from threatsample limit 1
